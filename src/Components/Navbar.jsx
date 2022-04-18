@@ -4,14 +4,14 @@ import { Navbar, Nav, Container, Offcanvas, NavDropdown, Form, FormControl, Butt
 
 import Home from "./Movies.jsx";
 import About from "./About.jsx";
-// import Player from "./Player.jsx";
+import Player from "./Player.jsx";
 import Mdata from "./Mdata.jsx";
 import logo from "../assets/popcorn.png";
 import Login from "./Login.jsx";
 // import history from "./history";
 import AllMovie from './AllMovies';
-// import TvData from './TvData';
-// import TvPlayer from './TvPlayer';
+import TvData from './TvData';
+import TvPlayer from './TvPlayer';
 
 function Navbars() {
     const [search, setSearch] = useState([]);
@@ -80,7 +80,7 @@ function Navbars() {
                                     <Nav className="justify-content-end flex-grow-1 pe-3">
                                         <Nav.Link as={Link} to={"/Home"}> Home </Nav.Link>
                                         <Nav.Link as={Link} to={"/about"}>About</Nav.Link>
-                                        <Nav.Link as={Link}  to={"/login"} exact> Login</Nav.Link>
+                                        <Nav.Link as={Link} to={"/login"} exact> Login</Nav.Link>
                                         <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
                                             <NavDropdown.Item href="#action3"> Action</NavDropdown.Item>
                                             <NavDropdown.Item href="#action4"> Another action </NavDropdown.Item>
@@ -100,16 +100,16 @@ function Navbars() {
                         <Route path="/login">  <Login /></Route>
                         <Route path="/Home"> <Home /></Route>
                         <Route path="/about"> <About /></Route>
-                       
                         <Route path="/allMovies">  <AllMovie /></Route>
-            <Route path="/mdata/:id"> <Mdata /></Route>
-            {/* <Route path="/player/:id"> <Player /></Route>
-            <Route path="/tvPlayer/:id"> <TvPlayer /></Route>
-            <Route path="/tvData/:id"> <TvData /></Route>
-            <Route path="/login"> <Login /></Route>
-            <Route path="/Revival_Pictures"> <Home /></Route> */} 
-                        {/* <Route path="/mdata1"> <Mdata1 /></Route> */}
-                        {/* <Route path="*"> <AllMovie /> </Route> */}
+                        <Route path="/mdata/:id"> <Mdata /></Route>
+
+                        <Route path="/player/:id"> <Player /></Route>
+                        <Route path="/tvPlayer/:id"> <TvPlayer /></Route>
+                        <Route path="/tvData/:id"> <TvData /></Route>
+
+                        <Route path="/Revival_Pictures"> <Home /></Route>
+
+                        <Route path="*"> <AllMovie /> </Route>
                     </Switch>
                 </div>
 
