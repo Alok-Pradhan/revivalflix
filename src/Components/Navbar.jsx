@@ -9,7 +9,7 @@ import Mdata from "./Mdata.jsx";
 import logo from "../assets/popcorn.png";
 import Login from "./Login.jsx";
 // import history from "./history";
-// import AllMovie from './AllMovies';
+import AllMovie from './AllMovies';
 // import TvData from './TvData';
 // import TvPlayer from './TvPlayer';
 
@@ -101,11 +101,11 @@ function Navbars() {
                         <Route path="/Home"> <Home /></Route>
                         <Route path="/about"> <About /></Route>
                        
+                        <Route path="/allMovies">  <AllMovie /></Route>
             <Route path="/mdata/:id"> <Mdata /></Route>
             {/* <Route path="/player/:id"> <Player /></Route>
             <Route path="/tvPlayer/:id"> <TvPlayer /></Route>
             <Route path="/tvData/:id"> <TvData /></Route>
-            <Route path="/allMovies">  <AllMovie /></Route>
             <Route path="/login"> <Login /></Route>
             <Route path="/Revival_Pictures"> <Home /></Route> */} 
                         {/* <Route path="/mdata1"> <Mdata1 /></Route> */}
