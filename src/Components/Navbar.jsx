@@ -3,12 +3,11 @@ import { BrowserRouter as Router, Redirect, Route, Link, Switch, } from "react-r
 import { Navbar, Nav, Container, Offcanvas, NavDropdown, Form, FormControl, Button, Modal, Row, Col, Card, } from "react-bootstrap";
 
 import Home from "./Movies.jsx";
-// import About from "./About.jsx";
+import About from "./About.jsx";
 // import Player from "./Player.jsx";
-// import Mdata from "./Mdata.jsx";
-// import logo from "../assets/popcorn.png";
+import Mdata from "./Mdata.jsx";
+import logo from "../assets/popcorn.png";
 import Login from "./Login.jsx";
-// import Mdata1 from "./mdata1.jsx";
 // import history from "./history";
 // import AllMovie from './AllMovies';
 // import TvData from './TvData';
@@ -55,8 +54,8 @@ function Navbars() {
                         <Container fluid>
                             <Navbar.Brand className="mx-2" as={Link} to={"/"}>
                                 <div className="d-flex">
-                                    {/* <img src={logo} alt="logo" width="40px" /> */}
-                                    <p className="mt-2 m-0"> Revival Pictures</p>
+                                    <img src={logo} alt="logo" width="40px" />
+                                    <p className="mt-2 m-0"> Revival Flix</p>
                                 </div>
                             </Navbar.Brand>
                             <div class="d-flex">
@@ -74,8 +73,8 @@ function Navbars() {
                             </div>
                             <Navbar.Offcanvas id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" placement="end" >
                                 <Offcanvas.Header closeButton>
-                                    <Offcanvas.Title id="offcanvasNavbarLabel">
-                                        <small className="mt-2 m-0 text-dark"> Revival Pictures</small> </Offcanvas.Title>
+                                    <Offcanvas.Title id="offcanvasNavbarLabel"><img src={logo} alt="logo" width="30px" />
+                                        <small className="mt-2 m-0 text-dark"> Revival Flix</small> </Offcanvas.Title>
                                 </Offcanvas.Header>
                                 <Offcanvas.Body>
                                     <Nav className="justify-content-end flex-grow-1 pe-3">
@@ -100,14 +99,15 @@ function Navbars() {
                         <Route exact path="/" component={() => <Redirect to="/Home" />} />
                         <Route path="/login">  <Login /></Route>
                         <Route path="/Home"> <Home /></Route>
-                        {/* <Route path="/about"> <About /></Route>
-            <Route path="/player/:id"> <Player /></Route>
-            <Route path="/tvPlayer/:id"> <TvPlayer /></Route>
+                        <Route path="/about"> <About /></Route>
+                       
             <Route path="/mdata/:id"> <Mdata /></Route>
+            {/* <Route path="/player/:id"> <Player /></Route>
+            <Route path="/tvPlayer/:id"> <TvPlayer /></Route>
             <Route path="/tvData/:id"> <TvData /></Route>
             <Route path="/allMovies">  <AllMovie /></Route>
             <Route path="/login"> <Login /></Route>
-            <Route path="/Revival_Pictures"> <Home /></Route> */}
+            <Route path="/Revival_Pictures"> <Home /></Route> */} 
                         {/* <Route path="/mdata1"> <Mdata1 /></Route> */}
                         {/* <Route path="*"> <AllMovie /> </Route> */}
                     </Switch>
