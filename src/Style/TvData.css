@@ -1,0 +1,25 @@
+.center {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.center::-webkit-scrollbar {
+    display: none;
+}
+
+.bg {
+    background-color: rgba(150, 57, 57, 0.748);
+    border-radius: 10px !important;
+}
+
+
+/* .ImgOpacity {
+    position: relative;
+    transition: transform .6s;
+}
+
+.imageOpacity:hover {
+    transform: scale(1.1);
+    z-index: 99;
+} */

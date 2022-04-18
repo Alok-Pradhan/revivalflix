@@ -1,0 +1,21 @@
+.first {
+    background-image: url('../assets/about_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+
+/* .second {
+    background-image: url('../assets/about_bg2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+} */
+
+.footer {
+    background-image: url('../assets/footer.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}

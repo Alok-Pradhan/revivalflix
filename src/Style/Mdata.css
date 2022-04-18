@@ -1,0 +1,46 @@
+ul {
+    list-style-type: none;
+}
+
+.content {
+    display: block;
+    justify-content: start;
+}
+
+.bold {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+li {
+    color: white;
+    font-weight: bold;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.blurry {
+    width: 100%;
+    /* backdrop-filter: blur(10px); */
+    background-color: black;
+    opacity: 0.9;
+}
+
+.plot {
+    text-align: center;
+    color: white;
+    mix-blend-mode: difference;
+}
+
+.center {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+@media (max-width: 768px) {
+    li {
+        padding: 8px;
+    }
+}
