@@ -5,6 +5,10 @@ import "../Style/Mdata.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // import {useLocation} from "react-router-dom";
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faCirclePlay } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Mdata(props){
     let history = useHistory();
@@ -149,7 +153,7 @@ export default function Mdata(props){
             <Col  lg={2} md={2} xs={2}>
             <Row className="justify-content-end "> 
                 <Col lg={2} md={2} xs={2} >
-                <Button variant="danger" onClick={()=>{history.push("/allMovies")}}><i class="fas fa-chevron-right"></i></Button>
+                <Button variant="danger" onClick={()=>{history.push("/allMovies")}}><FontAwesomeIcon icon={faChevronRight} /></Button>
                 </Col>
             </Row>
             </Col>
@@ -164,9 +168,10 @@ export default function Mdata(props){
                     <Card.Img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="Card image" style={{borderRadius:"15px"}} />
                 
                     <div className="row justify-content-center info">
-                        <i class="far fa-play-circle" style={{fontSize:"2rem"}} ></i>
+                        {/* <i class="far fa-play-circle" style={{fontSize:"2rem"}} ></i> */}
+                        <FontAwesomeIcon icon={faCirclePlay} style={{fontSize:"2rem"}} />
                         <p className="m-0">{item.original_title}{item.original_name}</p>
-                        <small style={{fontSize:"0.6rem"}}>{item.vote_average} .<i class="fas fa-heart text-danger mt-1 mx-1"></i>{item.vote_count} . {item.original_language}</small>
+                        <small style={{fontSize:"0.6rem"}}>{item.vote_average} .<FontAwesomeIcon icon={faHeart} />{item.vote_count} . {item.original_language}</small>
                     </div>
 
                     </Card>

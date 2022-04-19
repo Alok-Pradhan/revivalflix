@@ -2,3 +2,20 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     display: none;
 }
+
+.left-border {
+    border-radius: 15px 0 0 15px;
+}
+
+.right-border {
+    border-radius: 0 15px 15px 0;
+}
+
+@media (max-width: 560px) {
+    .left-border {
+        border-radius: 15px 15px 0 0;
+    }
+    .right-border { 
+        border-radius: 0 0 15px 15px;
+    }
+}

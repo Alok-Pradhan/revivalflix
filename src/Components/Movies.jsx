@@ -4,7 +4,13 @@ import {BrowserRouter as Router, Route, Link,Switch,useHistory} from 'react-rout
 import "../Style/Movies.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+import { faPlayCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faCirclePlay } from '@fortawesome/free-regular-svg-icons'
 
 function Movies(){
     const [toggle,setToggle] = useState([]);
@@ -77,41 +83,33 @@ function Movies(){
 
     return(
         <div className="pt-4" style={{backgroundColor: 'black'}}>
-        <Carousel  indicators={true} controls={true} >
-          {
-            caraousel_img.map((item)=>
-              <Carousel.Item interval={6000} >
-              <Card  className="mx-4" style={{backgroundColor:"black"}}>
-              <Row>
-                <Col xs={6} md={5}>
-                  <div className="justify-content-center ">
-                  <p className="m-0 text">
-                 {item.Name}
-                  </p>
-                  <small className=" text-white">{item.Genre} . {item.Duration} . {item.Year}</small><br/>
-                    <small className ="hide">{item.Plot}</small> 
-                    <Row className="d-flex justify-content-around mt-3 btns">
-                      <Col lg={4} md={2} xs={2} className="p-0">
-                        <Button variant="danger" className="" onClick ={()=>{history.push(`/mdata/${item.imdbId}`)}} ><i class="fas fa-info-circle"></i> <span className="none">Details</span></Button>
-                        </Col>
-                        <Col lg={4} md={2} xs={2} className="p-0 ">
-                        <Button variant="outline-danger" className="  text-white"><i class="fas fa-play-circle"></i> <span className="none">Watch Trailer</span> </Button>      
-                        </Col>
-                        <Col lg={4} md={2} xs={2} className="p-0 ">
-                        <Button variant="danger" className=""><i class="fas fa-plus"></i> <span className="none">Watchlist</span></Button> 
-                        </Col>
-                    </Row>   
-                      </div>
-                </Col>
-                <Col xs={6} md={7} className = "p-0 faded">
-                  <img className="c-Image" src={item.Image} alt="First slide" style={{}} />
-                </Col>
-                </Row>
-                </Card>
+       <Carousel indicators={true} controls={true} >
+            {
+              caraousel_img.map((item)=>(
+                <Carousel.Item interval={25000} >
+                  
+                <img 
+                  className="d-block  img"
+                  src={item.Image}
+                  alt="First slide" height="500px"
+                />
+                <Carousel.Caption>
+                  <h3 class="text">{item.Name}</h3>
+                  {/* <p>{item.Plot}</p> */}
+                  <Row className="  mt-3 btns">
+                     <div className="d-flex justify-content-center">
+                     <Button variant="danger" className="" onClick ={()=>{history.push(`/mdata/${item.imdbId}`)}} ><FontAwesomeIcon icon={faCircleInfo} /> <span className="none">Details</span></Button>
+                       <Button variant="danger" className=" mx-3 text-white" onClick={()=>{history.push({pathname:`/player/${item.imdbId}`,})}}><FontAwesomeIcon icon={faPlayCircle} /> <span className="none">Watch</span> </Button> 
+                       <Button variant="danger" className=""><FontAwesomeIcon icon={faPlus} /> <span className="none">Watchlist</span></Button> 
+                     </div>
+                    </Row>  
+                </Carousel.Caption>
               </Carousel.Item>
-            )
-          }
-      </Carousel>
+             
+              )
+              )
+            }
+          </Carousel>
 
       <div>
           <Row className=" mt-5 d-flex justify-content-between  w-100">
@@ -121,7 +119,7 @@ function Movies(){
             <Col  lg={2} md={2} xs={2} >
               <Row className="justify-content-end me-2"> 
                 <Col lg={2} md={2} xs={2} >
-                  <Button variant="danger" onClick={()=>{history.push("/allMovies")}}><i class="fas fa-chevron-right"></i></Button>
+                  <Button variant="danger" onClick={()=>{history.push("/allMovies")}}><FontAwesomeIcon icon={faChevronRight} /></Button>
                 </Col>
               </Row>
             </Col>
@@ -159,7 +157,7 @@ function Movies(){
         <Col  lg={2} md={2} xs={2}>
           <Row className="justify-content-end me-2"> 
               <Col lg={2} md={2} xs={2} >
-                <Button variant="danger" onClick={()=>{history.push("/allMovies")}}><i class="fas fa-chevron-right"></i></Button>
+                <Button variant="danger" onClick={()=>{history.push("/allMovies")}}><FontAwesomeIcon icon={faChevronRight} /></Button>
               </Col>
             </Row>
         </Col>
@@ -197,7 +195,7 @@ function Movies(){
         <Col  lg={2} md={2} xs={2}>
         <Row className="justify-content-end me-2"> 
             <Col lg={2} md={2} xs={2} >
-              <Button variant="danger" onClick={()=>{history.push("/allMovies")}}><i class="fas fa-chevron-right"></i></Button>
+              <Button variant="danger" onClick={()=>{history.push("/allMovies")}}><FontAwesomeIcon icon={faChevronRight} /></Button>
             </Col>
           </Row>
         </Col>
@@ -237,7 +235,7 @@ function Movies(){
         <Col  lg={2} md={2} xs={2}>
         <Row className="justify-content-end me-2"> 
             <Col lg={2} md={2} xs={2} >
-              <Button variant="danger" onClick={()=>{history.push("/allMovies")}}><i class="fas fa-chevron-right"></i></Button>
+              <Button variant="danger" onClick={()=>{history.push("/allMovies")}}><FontAwesomeIcon icon={faChevronRight} /></Button>
             </Col>
           </Row>
         </Col>

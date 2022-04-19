@@ -13,6 +13,12 @@ import AllMovie from './AllMovies';
 import TvData from './TvData';
 import TvPlayer from './TvPlayer';
 
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+
+
 function Navbars() {
     const [search, setSearch] = useState([]);
     const [lgShow, setLgShow] = useState(false);
@@ -62,11 +68,13 @@ function Navbars() {
                                 <Nav.Link variant="muted me-2 px-0" onClick={() => {
                                     setLgShow(true);
                                 }}>
-                                    <i class="fas fa-search text-white " style={{ fontSize: "1.5rem" }}></i>
+                                    {/* <i class="fas fa-search text-white " style={{ fontSize: "1.5rem" }}></i> */}
+                                    <FontAwesomeIcon icon={faSearch} style={{fontSize:"1.5rem"}} className="text-white"/>
 
                                 </Nav.Link>
                                 <Nav.Link as={Link} to="/login">
-                                    <i class="fas fa-user-circle text-white" style={{ fontSize: "1.5rem" }}></i>
+                                    <FontAwesomeIcon icon={faUserCircle} style={{fontSize:"1.5rem"}} className="text-white"/>
+                                    {/* <i class="fas fa-user-circle text-white" style={{ fontSize: "1.5rem" }}></i> */}
                                 </Nav.Link>
 
                                 <Navbar.Toggle aria-controls="offcanvasNavbar" className="p-0 border-0" />
@@ -102,7 +110,6 @@ function Navbars() {
                         <Route path="/about"> <About /></Route>
                         <Route path="/allMovies">  <AllMovie /></Route>
                         <Route path="/mdata/:id"> <Mdata /></Route>
-
                         <Route path="/player/:id"> <Player /></Route>
                         <Route path="/tvPlayer/:id"> <TvPlayer /></Route>
                         <Route path="/tvData/:id"> <TvData /></Route>
