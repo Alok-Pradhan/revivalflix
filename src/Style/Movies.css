@@ -157,7 +157,7 @@ small {
         display: none;
     }
     .img{
-        height:300px;
+        height:auto;
         width : 100% !important;
     }
 }
